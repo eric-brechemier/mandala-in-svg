@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <svg xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
   width="254mm"
   height="254mm"
   viewBox="-127 -127 254 254"
@@ -14,5 +15,12 @@
     Exercice de réalisation d'un mandala à six rayons,
     du livre "Mandala, Voyage vers le centre", de Bailey Cunningham
   </desc>
-  <circle cx="0" cy="0" r="76" style="stroke: black; fill: none" />
+  <defs>
+    <circle id="point" r="0.5" />
+  </defs>
+  <use xlink:href="#point" />
+  <circle
+    cx="0" cy="0" r="76"
+    stroke="black" fill="none" stroke-dasharray="5,4"
+  />
 </svg>
