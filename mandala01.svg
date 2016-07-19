@@ -17,10 +17,18 @@
   </desc>
   <defs>
     <circle id="point" r="0.5" />
-    <line id="horizontal-diameter"
+    <line id="short-line"
       x1="-76" x2="76" y1="0" y2="0"
       stroke="#eee" stroke-dasharray="5,4"
     />
+    <g id="long-line">
+      <line
+        x1="-114.5" x2="114.5" y1="0" y2="0"
+        stroke="#eee" stroke-dasharray="5,4"
+      />
+      <use xlink:href="#point" transform="translate(-114)" />
+      <use xlink:href="#point" transform="translate(114)" />
+    </g>
   </defs>
   <g id="construction">
     <circle
@@ -28,11 +36,11 @@
       stroke="#eee" fill="none" stroke-dasharray="5,4"
     />
     <g id="step3">
-      <use xlink:href="#horizontal-diameter" transform="rotate(60)" />
-      <use xlink:href="#horizontal-diameter" transform="rotate(120)" />
+      <use xlink:href="#short-line" transform="rotate(60)" />
+      <use xlink:href="#short-line" transform="rotate(120)" />
     </g>
     <g id="step1">
-      <use xlink:href="#horizontal-diameter" />
+      <use xlink:href="#short-line" />
       <use xlink:href="#point" transform="translate(-76,0)" />
       <use xlink:href="#point" transform="translate(76,0)" />
     </g>
@@ -41,6 +49,11 @@
       <use xlink:href="#point" transform="rotate(120) translate(-76,0)" />
       <use xlink:href="#point" transform="rotate(60) translate(76,0)" />
       <use xlink:href="#point" transform="rotate(120) translate(76,0)" />
+    </g>
+    <g id="step5">
+      <use xlink:href="#long-line" transform="rotate(30)" />
+      <use xlink:href="#long-line" transform="rotate(90)" />
+      <use xlink:href="#long-line" transform="rotate(150)" />
     </g>
     <g id="step4">
       <use xlink:href="#point" transform="rotate(30) translate(-76,0)" />
