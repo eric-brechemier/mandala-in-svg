@@ -42,6 +42,14 @@
       <use xlink:href="#point" transform="rotate(60) translate(76,0)" />
       <use xlink:href="#point" transform="rotate(120) translate(76,0)" />
     </g>
+    <g id="step4">
+      <use xlink:href="#point" transform="rotate(30) translate(-76,0)" />
+      <use xlink:href="#point" transform="rotate(90) translate(-76,0)" />
+      <use xlink:href="#point" transform="rotate(150) translate(-76,0)" />
+      <use xlink:href="#point" transform="rotate(30) translate(76,0)" />
+      <use xlink:href="#point" transform="rotate(90) translate(76,0)" />
+      <use xlink:href="#point" transform="rotate(150) translate(76,0)" />
+    </g>
     <use xlink:href="#point" />
   </g>
 </svg>
