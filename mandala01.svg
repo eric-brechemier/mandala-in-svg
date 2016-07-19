@@ -40,18 +40,12 @@
   </defs>
   <g id="construction">
     <circle cx="0" cy="0" r="30" class="empty dashed" />
-    <g id="step3">
-      <use xlink:href="#short-line" transform="rotate(60)" />
-      <use xlink:href="#short-line" transform="rotate(120)" />
-    </g>
-    <g id="step1">
-      <use xlink:href="#short-line" />
-    </g>
-    <g id="step5">
-      <use xlink:href="#long-line" transform="rotate(30)" />
-      <use xlink:href="#long-line" transform="rotate(90)" />
-      <use xlink:href="#long-line" transform="rotate(150)" />
-    </g>
+    <use xlink:href="#short-line" />
+    <use xlink:href="#short-line" transform="rotate(60)" />
+    <use xlink:href="#short-line" transform="rotate(120)" />
+    <use xlink:href="#long-line" transform="rotate(30)" />
+    <use xlink:href="#long-line" transform="rotate(90)" />
+    <use xlink:href="#long-line" transform="rotate(150)" />
     <use xlink:href="#point" />
   </g>
 </svg>
