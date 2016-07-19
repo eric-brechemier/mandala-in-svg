@@ -28,13 +28,13 @@
   <defs>
     <circle id="point" r="2.5" />
     <g id="short-line">
-      <line x1="-300" x2="300" y1="0" y2="0" class="dashed" />
-      <use xlink:href="#point" transform="translate(-300)" />
-      <use xlink:href="#point" transform="translate(-275)" />
-      <use xlink:href="#point" transform="translate(-150)" />
-      <use xlink:href="#point" transform="translate(150)" />
-      <use xlink:href="#point" transform="translate(275)" />
-      <use xlink:href="#point" transform="translate(300)" />
+      <g id="half-short-line">
+        <line x1="0" x2="300" y1="0" y2="0" class="dashed" />
+        <use xlink:href="#point" transform="translate(150)" />
+        <use xlink:href="#point" transform="translate(275)" />
+        <use xlink:href="#point" transform="translate(300)" />
+      </g>
+      <use xlink:href="#half-short-line" transform="scale(-1)" />
     </g>
     <g id="long-line">
       <g id="half-long-line">
