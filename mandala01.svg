@@ -18,9 +18,11 @@
   <defs>
     <circle id="point" r="0.5" />
   </defs>
-  <use xlink:href="#point" />
-  <circle
-    cx="0" cy="0" r="76"
-    stroke="black" fill="none" stroke-dasharray="5,4"
-  />
+  <g id="construction">
+    <use xlink:href="#point" />
+    <circle
+      cx="0" cy="0" r="76"
+      stroke="black" fill="none" stroke-dasharray="5,4"
+    />
+  </g>
 </svg>
