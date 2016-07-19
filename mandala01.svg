@@ -3,7 +3,7 @@
   xmlns:xlink="http://www.w3.org/1999/xlink"
   width="10in"
   height="10in"
-  viewBox="-50 -50 100 100"
+  viewBox="-500 -500 1000 1000"
 >
   <title xml:lang="en">6-ray Mandala</title>
   <desc xml:lang="en">
@@ -21,29 +21,29 @@
     }
     .dashed {
       stroke: #eee;
-      stroke-dasharray: 5,4;
-      stroke-width: 0.5;
+      stroke-dasharray: 25,20;
+      stroke-width: 5;
     }
   </style>
   <defs>
-    <circle id="point" r="0.25" />
+    <circle id="point" r="2.5" />
     <g id="short-line">
-      <line x1="-30" x2="30" y1="0" y2="0" class="dashed" />
-      <use xlink:href="#point" transform="translate(-30)" />
-      <use xlink:href="#point" transform="translate(-27.5)" />
-      <use xlink:href="#point" transform="translate(-15)" />
-      <use xlink:href="#point" transform="translate(15)" />
-      <use xlink:href="#point" transform="translate(27.5)" />
-      <use xlink:href="#point" transform="translate(30)" />
+      <line x1="-300" x2="300" y1="0" y2="0" class="dashed" />
+      <use xlink:href="#point" transform="translate(-300)" />
+      <use xlink:href="#point" transform="translate(-275)" />
+      <use xlink:href="#point" transform="translate(-150)" />
+      <use xlink:href="#point" transform="translate(150)" />
+      <use xlink:href="#point" transform="translate(275)" />
+      <use xlink:href="#point" transform="translate(300)" />
     </g>
     <g id="long-line">
-      <line x1="-45" x2="45" y1="0" y2="0" class="dashed" />
-      <use xlink:href="#point" transform="translate(-45)" />
-      <use xlink:href="#point" transform="translate(45)" />
+      <line x1="-450" x2="450" y1="0" y2="0" class="dashed" />
+      <use xlink:href="#point" transform="translate(-450)" />
+      <use xlink:href="#point" transform="translate(450)" />
     </g>
   </defs>
   <g id="construction">
-    <circle cx="0" cy="0" r="30" class="empty dashed" />
+    <circle cx="0" cy="0" r="300" class="empty dashed" />
     <use xlink:href="#short-line" />
     <use xlink:href="#short-line" transform="rotate(60)" />
     <use xlink:href="#short-line" transform="rotate(120)" />
