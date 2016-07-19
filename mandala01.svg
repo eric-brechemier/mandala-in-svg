@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+  width="254mm"
+  height="254mm"
+  viewBox="-127 -127 254 254"
+>
+  <title xml:lang="en">6-ray Mandala</title>
+  <desc xml:lang="en">
+    Exercise to draw of mandala with 6 rays,
+    from the book "Mandala, Journey to the Centre", by Bailey Cunningham
+  </desc>
+  <title xml:lang="fr">Mandala à 6 rayons</title>
+  <desc xml:lang="fr">
+    Exercice de réalisation d'un mandala à six rayons,
+    du livre "Mandala, Voyage vers le centre", de Bailey Cunningham
+  </desc>
+  <circle cx="0" cy="0" r="76" style="stroke: black; fill: none" />
+</svg>
