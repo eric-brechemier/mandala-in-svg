@@ -37,9 +37,19 @@
       <use xlink:href="#point" transform="translate(300)" />
     </g>
     <g id="long-line">
-      <line x1="-450" x2="450" y1="0" y2="0" class="dashed" />
-      <use xlink:href="#point" transform="translate(-450)" />
-      <use xlink:href="#point" transform="translate(450)" />
+      <g id="half-long-line">
+        <line x1="0" x2="450" y1="0" y2="0" class="dashed" />
+        <use xlink:href="#point" transform="translate(25)" />
+        <use xlink:href="#point" transform="translate(50)" />
+        <use xlink:href="#point" transform="translate(65)" />
+        <use xlink:href="#point" transform="translate(175)" />
+        <use xlink:href="#point" transform="translate(225)" />
+        <use xlink:href="#point" transform="translate(300)" />
+        <use xlink:href="#point" transform="translate(350)" />
+        <use xlink:href="#point" transform="translate(400)" />
+        <use xlink:href="#point" transform="translate(450)" />
+      </g>
+      <use xlink:href="#half-long-line" transform="scale(-1)" />
     </g>
   </defs>
   <g id="construction">
