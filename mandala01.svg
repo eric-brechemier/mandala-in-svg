@@ -27,7 +27,11 @@
   </style>
   <defs>
     <circle id="point" r="0.25" />
-    <line id="short-line" x1="-30" x2="30" y1="0" y2="0" class="dashed" />
+    <g id="short-line">
+      <line x1="-30" x2="30" y1="0" y2="0" class="dashed" />
+      <use xlink:href="#point" transform="translate(-30)" />
+      <use xlink:href="#point" transform="translate(30)" />
+    </g>
     <g id="long-line">
       <line x1="-45" x2="45" y1="0" y2="0" class="dashed" />
       <use xlink:href="#point" transform="translate(-45)" />
@@ -42,27 +46,11 @@
     </g>
     <g id="step1">
       <use xlink:href="#short-line" />
-      <use xlink:href="#point" transform="translate(-30,0)" />
-      <use xlink:href="#point" transform="translate(30,0)" />
-    </g>
-    <g id="step2">
-      <use xlink:href="#point" transform="rotate(60) translate(-30,0)" />
-      <use xlink:href="#point" transform="rotate(120) translate(-30,0)" />
-      <use xlink:href="#point" transform="rotate(60) translate(30,0)" />
-      <use xlink:href="#point" transform="rotate(120) translate(30,0)" />
     </g>
     <g id="step5">
       <use xlink:href="#long-line" transform="rotate(30)" />
       <use xlink:href="#long-line" transform="rotate(90)" />
       <use xlink:href="#long-line" transform="rotate(150)" />
-    </g>
-    <g id="step4">
-      <use xlink:href="#point" transform="rotate(30) translate(-30,0)" />
-      <use xlink:href="#point" transform="rotate(90) translate(-30,0)" />
-      <use xlink:href="#point" transform="rotate(150) translate(-30,0)" />
-      <use xlink:href="#point" transform="rotate(30) translate(30,0)" />
-      <use xlink:href="#point" transform="rotate(90) translate(30,0)" />
-      <use xlink:href="#point" transform="rotate(150) translate(30,0)" />
     </g>
     <use xlink:href="#point" />
   </g>
