@@ -64,10 +64,13 @@
     with a=50, h~43,3012702
     with a=65, h~56,29165126
     with a=150, h~129,9038106
+    with a=300, h~259,8076212
     -->
     <line id="hex50" x1="-25" x2="25" y1="43.30" y2="43.30" />
     <line id="hex65" x1="-32.5" x2="32.5" y1="56.29" y2="56.29" />
     <line id="hex150" x1="-75" x2="75" y1="129.90" y2="129.90" />
+    <line id="stardust-175-300" x1="0" y1="175" x2="150" y2="259.81" />
+    <line id="stardust-225-300" x1="0" y1="225" x2="150" y2="259.81" />
   </defs>
   <g id="construction">
     <circle cx="0" cy="0" r="300" class="empty dashed" />
@@ -102,5 +105,27 @@
     <use xlink:href="#hex150" transform="rotate(180)" />
     <use xlink:href="#hex150" transform="rotate(240)" />
     <use xlink:href="#hex150" transform="rotate(300)" />
+  </g>
+  <g id="star-175-300">
+    <g id="half-star-175-300">
+      <use xlink:href="#stardust-175-300" />
+      <use xlink:href="#stardust-175-300" transform="rotate(60)" />
+      <use xlink:href="#stardust-175-300" transform="rotate(120)" />
+      <use xlink:href="#stardust-175-300" transform="rotate(180)" />
+      <use xlink:href="#stardust-175-300" transform="rotate(240)" />
+      <use xlink:href="#stardust-175-300" transform="rotate(300)" />
+    </g>
+    <use xlink:href="#half-star-175-300" transform="scale(-1,1)" />
+  </g>
+  <g id="star-225-300">
+    <g id="half-star-225-300">
+      <use xlink:href="#stardust-225-300" />
+      <use xlink:href="#stardust-225-300" transform="rotate(60)" />
+      <use xlink:href="#stardust-225-300" transform="rotate(120)" />
+      <use xlink:href="#stardust-225-300" transform="rotate(180)" />
+      <use xlink:href="#stardust-225-300" transform="rotate(240)" />
+      <use xlink:href="#stardust-225-300" transform="rotate(300)" />
+    </g>
+    <use xlink:href="#half-star-225-300" transform="scale(-1,1)" />
   </g>
 </svg>
