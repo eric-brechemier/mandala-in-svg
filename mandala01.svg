@@ -75,6 +75,21 @@
     <line id="stardust-65-150" x1="0" y1="65" x2="75" y2="129.90" />
     <line id="stardust-175-300" x1="0" y1="175" x2="150" y2="259.81" />
     <line id="stardust-225-300" x1="0" y1="225" x2="150" y2="259.81" />
+    <!-- According to Thales's Theorem, given two parallel base lines
+    inside the triangle which makes a branch of a star,
+    the ratio of distances of the star tip to each line equals
+    the ratio of lengths of the base lines.
+    This gives the length of the base line at 25 (0.25in) from the tip
+    of the star 175-300 as:
+      b / 175 = 25 / (300 - √3*175/2)
+    i.e.
+      b ~ 29,472085039
+    and
+      b/2 ~ 14,73604252
+    -->
+    <line id="tipline-275-of-star-175-300"
+      x1="-14.74" y1="275" x2="14.74" y2="275"
+    />
   </defs>
   <g id="construction">
     <circle cx="0" cy="0" r="300" class="empty dashed" />
@@ -147,6 +162,14 @@
       <use xlink:href="#stardust-175-300" transform="rotate(300)" />
     </g>
     <use xlink:href="#half-star-175-300" transform="scale(-1,1)" />
+  </g>
+  <g id="tiplines-of-star-175-300">
+    <use xlink:href="#tipline-275-of-star-175-300" transform="rotate(30)" />
+    <use xlink:href="#tipline-275-of-star-175-300" transform="rotate(90)" />
+    <use xlink:href="#tipline-275-of-star-175-300" transform="rotate(150)" />
+    <use xlink:href="#tipline-275-of-star-175-300" transform="rotate(210)" />
+    <use xlink:href="#tipline-275-of-star-175-300" transform="rotate(270)" />
+    <use xlink:href="#tipline-275-of-star-175-300" transform="rotate(330)" />
   </g>
   <g id="star-225-300">
     <g id="half-star-225-300">
