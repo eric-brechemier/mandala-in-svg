@@ -32,6 +32,10 @@
   <defs>
     <circle id="point" r="2.5" />
     <line id="vline45" x1="0" x2="0" y1="0" y2="45" />
+    <line id="vline70.71" x1="0" x2="0" y1="0" y2="70.71" />
+    <line id="vline100" x1="0" x2="0" y1="0" y2="100" />
+    <line id="vline125" x1="0" x2="0" y1="0" y2="125" />
+    <line id="hline100" x1="-50" x2="50" y1="0" y2="0" />
     <g id="short-line">
       <g id="half-short-line">
         <line x1="0" x2="300" y1="0" y2="0" class="dashed" />
@@ -193,5 +197,20 @@
       <use xlink:href="#stardust-225-300" transform="rotate(300)" />
     </g>
     <use xlink:href="#half-star-225-300" transform="scale(-1,1)" />
+  </g>
+  <g id="snowflakes">
+    <g id="snowflake">
+      <use xlink:href="#vline125" transform="translate(0,225)" />
+      <use xlink:href="#vline100" transform="translate(0,300) rotate(-45)" />
+      <use xlink:href="#vline100" transform="translate(0,300) rotate(45)" />
+      <use xlink:href="#vline70.71" transform="translate(0,350) rotate(-45)" />
+      <use xlink:href="#vline70.71" transform="translate(0,350) rotate(45)" />
+      <use xlink:href="#hline100" transform="translate(0,400)" />
+    </g>
+    <use xlink:href="#snowflake" transform="rotate(60)" />
+    <use xlink:href="#snowflake" transform="rotate(120)" />
+    <use xlink:href="#snowflake" transform="rotate(180)" />
+    <use xlink:href="#snowflake" transform="rotate(240)" />
+    <use xlink:href="#snowflake" transform="rotate(300)" />
   </g>
 </svg>
