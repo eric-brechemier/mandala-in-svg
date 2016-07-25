@@ -32,6 +32,7 @@
   <defs>
     <circle id="point" r="2.5" />
     <line id="vline45" x1="0" x2="0" y1="0" y2="45" />
+    <line id="vline50" x1="0" x2="0" y1="0" y2="50" />
     <line id="vline70.71" x1="0" x2="0" y1="0" y2="70.71" />
     <line id="vline100" x1="0" x2="0" y1="0" y2="100" />
     <line id="vline125" x1="0" x2="0" y1="0" y2="125" />
@@ -75,7 +76,6 @@
     <line id="hex50" x1="-25" x2="25" y1="43.30" y2="43.30" />
     <line id="hex65" x1="-32.5" x2="32.5" y1="56.29" y2="56.29" />
     <line id="hex150" x1="-75" x2="75" y1="129.90" y2="129.90" />
-    <line id="stick-stardust-50" x1="0" y1="-25" x2="0" y2="25" />
     <line id="stardust-25-43.30" x1="0" y1="25" x2="21.65" y2="37.5" />
     <line id="stardust-65-150" x1="0" y1="65" x2="75" y2="129.90" />
     <line id="stardust-175-300" x1="0" y1="175" x2="150" y2="259.81" />
@@ -120,7 +120,7 @@
       <use xlink:href="#hex150" />
     </g>
     <g id="stick-star-50">
-      <use xlink:href="#stick-stardust-50" />
+      <use xlink:href="#vline50" transform="translate(0,-25)" />
     </g>
     <g id="star-25-43.30">
       <g id="half-star-25-43.30">
