@@ -155,15 +155,13 @@
       </g>
       <use xlink:href="#half-star-225-300" transform="scale(-1,1)" />
     </g>
-    <g id="snowflakes">
-      <g id="snowflake">
-        <use xlink:href="#vline125" transform="translate(0,225)" />
-        <use xlink:href="#vline100" transform="translate(0,300) rotate(-45)" />
-        <use xlink:href="#vline100" transform="translate(0,300) rotate(45)" />
-        <use xlink:href="#vline70.71" transform="translate(0,350) rotate(-45)" />
-        <use xlink:href="#vline70.71" transform="translate(0,350) rotate(45)" />
-        <use xlink:href="#hline100" transform="translate(0,400)" />
-      </g>
+    <g id="snowflake">
+      <use xlink:href="#vline125" transform="translate(0,225)" />
+      <use xlink:href="#vline100" transform="translate(0,300) rotate(-45)" />
+      <use xlink:href="#vline100" transform="translate(0,300) rotate(45)" />
+      <use xlink:href="#vline70.71" transform="translate(0,350) rotate(-45)" />
+      <use xlink:href="#vline70.71" transform="translate(0,350) rotate(45)" />
+      <use xlink:href="#hline100" transform="translate(0,400)" />
     </g>
   </g>
   <use xlink:href="#branch" transform="rotate(60)" />
