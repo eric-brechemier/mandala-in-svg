@@ -28,6 +28,10 @@
       stroke: black;
       stroke-width: 2.5;
     }
+    polygon {
+      stroke: none;
+      fill: black;
+    }
   </style>
   <defs>
     <circle id="point" r="2.5" />
@@ -95,6 +99,8 @@
     <line id="tipline-275-of-star-175-300"
       x1="-14.74" y1="275" x2="14.74" y2="275"
     />
+    <polygon id="diamond-28x16" points="-14,0 0,-8 14,0 0,8" />
+    <polygon id="diamond-38x22" points="-19,0 0,-11 19,0 0,11" />
   </defs>
   <g id="construction">
     <circle cx="0" cy="0" r="300" class="empty dashed" />
@@ -110,6 +116,9 @@
     <use xlink:href="#point" />
   </g>
   <g id="branch">
+    <g id="diamond-star">
+      <use xlink:href="#diamond-38x22" transform="rotate(30)" />
+    </g>
     <g id="stick-star-50">
       <use xlink:href="#vline50" transform="translate(0,-25)" />
     </g>
@@ -118,6 +127,9 @@
         <use xlink:href="#stardust-25-43.30" />
       </g>
       <use xlink:href="#half-star-25-43.30" transform="scale(-1,1)" />
+    </g>
+    <g id="diamond-pane">
+      <use xlink:href="#diamond-28x16" transform="translate(0,37.5)" />
     </g>
     <g id="hexagon50">
       <use xlink:href="#hex50" transform="rotate(30)" />
