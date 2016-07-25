@@ -145,8 +145,8 @@
     </g>
     <g id="extra-startips-225">
       <g id="extra-startip-225">
-        <use xlink:href="#vline45" transform="translate(0,-225) rotate(-45)" />
-        <use xlink:href="#vline45" transform="translate(0,-225) rotate(45)" />
+        <use xlink:href="#vline45" transform="translate(0,225) rotate(-135)" />
+        <use xlink:href="#vline45" transform="translate(0,225) rotate(135)" />
       </g>
     </g>
     <g id="star-225-300">
