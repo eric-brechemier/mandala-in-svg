@@ -110,15 +110,6 @@
     <use xlink:href="#point" />
   </g>
   <g id="branch">
-    <g id="hexagon50">
-      <use xlink:href="#hex50" transform="rotate(30)" />
-    </g>
-    <g id="hexagon65">
-      <use xlink:href="#hex65" transform="rotate(30)" />
-    </g>
-    <g id="hexagon150">
-      <use xlink:href="#hex150" />
-    </g>
     <g id="stick-star-50">
       <use xlink:href="#vline50" transform="translate(0,-25)" />
     </g>
@@ -128,11 +119,20 @@
       </g>
       <use xlink:href="#half-star-25-43.30" transform="scale(-1,1)" />
     </g>
+    <g id="hexagon50">
+      <use xlink:href="#hex50" transform="rotate(30)" />
+    </g>
+    <g id="hexagon65">
+      <use xlink:href="#hex65" transform="rotate(30)" />
+    </g>
     <g id="star-65-150">
       <g id="half-star-65-150">
         <use xlink:href="#stardust-65-150" />
       </g>
       <use xlink:href="#half-star-65-150" transform="scale(-1,1)" />
+    </g>
+    <g id="hexagon150">
+      <use xlink:href="#hex150" />
     </g>
     <g id="star-175-300">
       <g id="half-star-175-300">
@@ -140,14 +140,14 @@
       </g>
       <use xlink:href="#half-star-175-300" transform="scale(-1,1)" />
     </g>
-    <g id="tiplines-of-star-175-300">
-      <use xlink:href="#tipline-275-of-star-175-300" transform="rotate(30)" />
-    </g>
     <g id="extra-startips-225">
       <g id="extra-startip-225">
         <use xlink:href="#vline45" transform="translate(0,225) rotate(-135)" />
         <use xlink:href="#vline45" transform="translate(0,225) rotate(135)" />
       </g>
+    </g>
+    <g id="tiplines-of-star-175-300">
+      <use xlink:href="#tipline-275-of-star-175-300" transform="rotate(30)" />
     </g>
     <g id="star-225-300">
       <g id="half-star-225-300">
