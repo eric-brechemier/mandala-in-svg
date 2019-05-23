@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="8in"
+  height="6in"
+  viewBox="-200 -150 400 300"
+>
+  <title xml:lang="en">Vesica Piscis (Mandorla)</title>
+  <desc xml:lang="en">
+    Construction of an equilateral triangle and a square from a figure
+    made of two intersecting circles called a Vesica Piscis, or Mandorla.
+    From the book "Mandala, Journey to the Centre", by Bailey Cunningham.
+  </desc>
+  <title xml:lang="fr">Vesica Piscis</title>
+  <desc xml:lang="fr">
+    Construstion d'un triangle équilatéral et d'un carré à partir d'une
+    figure géométrique appelée Vesical Piscis, formée de deux cercles croisés.
+    Extraite du livre "Mandala, Voyage vers le centre", de Bailey Cunningham.
+  </desc>
+  <style type="text/css">
+    .empty, .contour {
+      fill: none;
+    }
+    .line, .contour, .point {
+      stroke: black;
+    }
+    .line, .contour {
+      stroke-width: 1.5;
+    }
+    .dashed {
+      stroke: #eee;
+      stroke-dasharray: 10,10;
+      stroke-width: 2;
+    }
+  </style>
+  <defs>
+    <circle id="point" r="1.5" class="point" />
+    <g id="mandorla" >
+      <circle class="step11 contour" cx="-50" cy="0" r="100" />
+      <circle class="step31 contour" cx="50" cy="0" r="100" />
+    </g>
+  </defs>
+  <g id="lines" class="background">
+    <line class="step20 dashed" x1="-175" x2="175" y1="0" y2="0" />
+    <!--
+    Computation for h, the half-height of the line in the middle
+    of the mandorla, given r the radius of the circle.
+
+    Pythagoras's theorem of right-angled triangle gives:
+      h² + (r/2)² = r²
+    which gives:
+      h² = r² - (r/2)² = r² - r²/4 = 3r²/4
+    or:
+      h = √3*r/2
+    with r=100, h~86.602540
+    -->
+    <line class="step21 dashed" x1="0" x2="0" y1="-86.6" y2="86.6" />
+    <circle class="step50 empty dashed" cx="0" cy="0" r="50" />
+  </g>
+  <g id="figures" class="foreground">
+    <use xlink:href="#mandorla" transform="translate(0,0)" />
+    <g id="triangle">
+      <line class="step41 line" x1="0" x2="-100" y1="-86.6" y2="86.6" />
+      <line class="step43 line" x1="-100" x2="100" y1="86.6" y2="86.6" />
+      <line class="step45 line" x1="100" x2="0" y1="86.6" y2="-86.6" />
+    </g>
+    <g id="square">
+      <line class="step60 line" x1="0" x2="-50" y1="-50" y2="0" />
+      <line class="step61 line" x1="-50" x2="0" y1="0" y2="50" />
+      <line class="step62 line" x1="0" x2="50" y1="50" y2="0" />
+      <line class="step63 line" x1="50" x2="0" y1="0" y2="-50" />
+    </g>
+  </g>
+  <g id="points" class="foremost">
+    <use id="center" xlink:href="#point" />
+    <use class="step10" xlink:href="#point" transform="translate(-50,0)" />
+    <use class="step30" xlink:href="#point" transform="translate(50,0)" />
+    <use class="step40" xlink:href="#point" transform="translate(0,-86.6)" />
+    <use class="step42" xlink:href="#point" transform="translate(-100,86.6)" />
+    <use class="step44" xlink:href="#point" transform="translate(100,86.6)" />
+    <use class="step46" xlink:href="#point" transform="translate(0,86.6)" />
+    <use class="step51" xlink:href="#point" transform="translate(0,-50)" />
+    <use class="step52" xlink:href="#point" transform="translate(0,50)" />
+  </g>
+</svg>
