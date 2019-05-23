@@ -18,6 +18,9 @@
     Extraite du livre "Mandala, Voyage vers le centre", de Bailey Cunningham.
   </desc>
   <style type="text/css">
+    .step {
+      visibility: hidden;
+    }
     .empty, .contour {
       fill: none;
     }
@@ -36,12 +39,27 @@
   <defs>
     <circle id="point" r="1.5" class="point" />
     <g id="mandorla" >
-      <circle class="step11 contour" cx="-50" cy="0" r="100" />
-      <circle class="step31 contour" cx="50" cy="0" r="100" />
+      <circle class="step contour" cx="-50" cy="0" r="100">
+        <set id="step11"
+          attributeName="visibility" attributeType="CSS" to="visible"
+          begin="step10.end" dur="0.5s" fill="freeze"
+        />
+      </circle>
+      <circle class="step contour" cx="50" cy="0" r="100">
+        <set id="step21"
+          attributeName="visibility" attributeType="CSS" to="visible"
+          begin="step20.end" dur="0.5s" fill="freeze"
+        />
+      </circle>
     </g>
   </defs>
   <g id="lines" class="background">
-    <line class="step20 dashed" x1="-175" x2="175" y1="0" y2="0" />
+    <line class="step dashed" x1="-175" x2="175" y1="0" y2="0">
+      <set id="step30"
+        attributeName="visibility" attributeType="CSS" to="visible"
+        begin="step21.end" dur="0.5s" fill="freeze"
+      />
+    </line>
     <!--
     Computation for h, the half-height of the line in the middle
     of the mandorla, given r the radius of the circle.
@@ -54,32 +72,116 @@
       h = √3*r/2
     with r=100, h~86.602540
     -->
-    <line class="step21 dashed" x1="0" x2="0" y1="-86.6" y2="86.6" />
-    <circle class="step51 empty dashed" cx="0" cy="0" r="50" />
+    <line class="step dashed" x1="0" x2="0" y1="-86.6" y2="86.6">
+      <set id="step31"
+        attributeName="visibility" attributeType="CSS" to="visible"
+        begin="step30.end" dur="0.5s" fill="freeze"
+      />
+    </line>
+    <circle class="step empty dashed" cx="0" cy="0" r="50">
+      <set id="step51"
+        attributeName="visibility" attributeType="CSS" to="visible"
+        begin="step50.end" dur="0.5s" fill="freeze"
+      />
+    </circle>
   </g>
   <g id="figures" class="foreground">
     <use xlink:href="#mandorla" transform="translate(0,0)" />
     <g id="triangle">
-      <line class="step41 line" x1="0" x2="-100" y1="-86.6" y2="86.6" />
-      <line class="step43 line" x1="-100" x2="100" y1="86.6" y2="86.6" />
-      <line class="step45 line" x1="100" x2="0" y1="86.6" y2="-86.6" />
+      <line class="step line" x1="0" x2="-100" y1="-86.6" y2="86.6">
+        <set id="step41"
+          attributeName="visibility" attributeType="CSS" to="visible"
+          begin="step40.end" dur="0.5s" fill="freeze"
+        />
+      </line>
+      <line class="step line" x1="-100" x2="100" y1="86.6" y2="86.6">
+        <set id="step43"
+          attributeName="visibility" attributeType="CSS" to="visible"
+          begin="step42.end" dur="0.5s" fill="freeze"
+        />
+      </line>
+      <line class="step line" x1="100" x2="0" y1="86.6" y2="-86.6">
+        <set id="step45"
+          attributeName="visibility" attributeType="CSS" to="visible"
+          begin="step44.end" dur="0.5s" fill="freeze"
+        />
+      </line>
     </g>
     <g id="square">
-      <line class="step60 line" x1="0" x2="-50" y1="-50" y2="0" />
-      <line class="step61 line" x1="-50" x2="0" y1="0" y2="50" />
-      <line class="step62 line" x1="0" x2="50" y1="50" y2="0" />
-      <line class="step63 line" x1="50" x2="0" y1="0" y2="-50" />
+      <line class="step line" x1="0" x2="-50" y1="-50" y2="0">
+        <set id="step60"
+          attributeName="visibility" attributeType="CSS" to="visible"
+          begin="step53.end" dur="0.5s" fill="freeze"
+        />
+      </line>
+      <line class="step line" x1="-50" x2="0" y1="0" y2="50">
+        <set id="step61"
+          attributeName="visibility" attributeType="CSS" to="visible"
+          begin="step60.end" dur="0.5s" fill="freeze"
+        />
+      </line>
+      <line class="step line" x1="0" x2="50" y1="50" y2="0">
+        <set id="step62"
+          attributeName="visibility" attributeType="CSS" to="visible"
+          begin="step61.end" dur="0.5s" fill="freeze"
+        />
+      </line>
+      <line class="step line" x1="50" x2="0" y1="0" y2="-50">
+        <set id="step63"
+          attributeName="visibility" attributeType="CSS" to="visible"
+          begin="step62.end" dur="0.5s" fill="freeze"
+        />
+      </line>
     </g>
   </g>
   <g id="points" class="foremost">
-    <use class="step10" xlink:href="#point" transform="translate(-50,0)" />
-    <use class="step30" xlink:href="#point" transform="translate(50,0)" />
-    <use class="step40" xlink:href="#point" transform="translate(0,-86.6)" />
-    <use class="step42" xlink:href="#point" transform="translate(-100,86.6)" />
-    <use class="step44" xlink:href="#point" transform="translate(100,86.6)" />
-    <use class="step46" xlink:href="#point" transform="translate(0,86.6)" />
-    <use class="step50" xlink:href="#point" id="center" />
-    <use class="step52" xlink:href="#point" transform="translate(0,-50)" />
-    <use class="step53" xlink:href="#point" transform="translate(0,50)" />
+    <use class="step" xlink:href="#point" transform="translate(-50,0)">
+      <set id="step10"
+        attributeName="visibility" attributeType="CSS" to="visible"
+        begin="0.5s" dur="0.5s" fill="freeze"
+      />
+    </use>
+    <use class="step" xlink:href="#point" transform="translate(50,0)">
+      <set id="step20"
+        attributeName="visibility" attributeType="CSS" to="visible"
+        begin="step11.end" dur="0.5s" fill="freeze"
+      />
+    </use>
+    <use class="step" xlink:href="#point" transform="translate(0,-86.6)">
+      <set id="step40"
+        attributeName="visibility" attributeType="CSS" to="visible"
+        begin="step31.end" dur="0.5s" fill="freeze"
+      />
+    </use>
+    <use class="step" xlink:href="#point" transform="translate(-100,86.6)">
+      <set id="step42"
+        attributeName="visibility" attributeType="CSS" to="visible"
+        begin="step41.end" dur="0.5s" fill="freeze"
+      />
+    </use>
+    <use class="step" xlink:href="#point" transform="translate(100,86.6)">
+      <set id="step44"
+        attributeName="visibility" attributeType="CSS" to="visible"
+        begin="step43.end" dur="0.5s" fill="freeze"
+      />
+    </use>
+    <use class="step" xlink:href="#point" id="center">
+      <set id="step50"
+        attributeName="visibility" attributeType="CSS" to="visible"
+        begin="step45.end" dur="0.5s" fill="freeze"
+      />
+    </use>
+    <use class="step" xlink:href="#point" transform="translate(0,-50)">
+      <set id="step52"
+        attributeName="visibility" attributeType="CSS" to="visible"
+        begin="step51.end" dur="0.5s" fill="freeze"
+      />
+    </use>
+    <use class="step" xlink:href="#point" transform="translate(0,50)">
+      <set id="step53"
+        attributeName="visibility" attributeType="CSS" to="visible"
+        begin="step52.end" dur="0.5s" fill="freeze"
+      />
+    </use>
   </g>
 </svg>
