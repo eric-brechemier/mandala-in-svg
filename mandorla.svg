@@ -55,7 +55,7 @@
     with r=100, h~86.602540
     -->
     <line class="step21 dashed" x1="0" x2="0" y1="-86.6" y2="86.6" />
-    <circle class="step50 empty dashed" cx="0" cy="0" r="50" />
+    <circle class="step51 empty dashed" cx="0" cy="0" r="50" />
   </g>
   <g id="figures" class="foreground">
     <use xlink:href="#mandorla" transform="translate(0,0)" />
@@ -72,14 +72,14 @@
     </g>
   </g>
   <g id="points" class="foremost">
-    <use id="center" xlink:href="#point" />
     <use class="step10" xlink:href="#point" transform="translate(-50,0)" />
     <use class="step30" xlink:href="#point" transform="translate(50,0)" />
     <use class="step40" xlink:href="#point" transform="translate(0,-86.6)" />
     <use class="step42" xlink:href="#point" transform="translate(-100,86.6)" />
     <use class="step44" xlink:href="#point" transform="translate(100,86.6)" />
     <use class="step46" xlink:href="#point" transform="translate(0,86.6)" />
-    <use class="step51" xlink:href="#point" transform="translate(0,-50)" />
-    <use class="step52" xlink:href="#point" transform="translate(0,50)" />
+    <use class="step50" xlink:href="#point" id="center" />
+    <use class="step52" xlink:href="#point" transform="translate(0,-50)" />
+    <use class="step53" xlink:href="#point" transform="translate(0,50)" />
   </g>
 </svg>
