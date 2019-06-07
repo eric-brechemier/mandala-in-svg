@@ -40,24 +40,53 @@
     <circle id="point" r="1.5" class="point" />
     <g id="mandorla" >
       <circle class="step contour" cx="-50" cy="0" r="100">
-        <set id="step11"
+        <!--
+          Trace the circle progressively by growing a single dashed stroke
+          from 0 to 2πr = 200π ~ 628.32 < 629
+        -->
+        <animate id="step11"
+          attributeName="stroke-dasharray" attributeType="CSS"
+          from="0 629" to="629 629"
+          begin="step10.end" dur="3s"
+          fill="freeze"
+        />
+        <set
           attributeName="visibility" attributeType="CSS" to="visible"
-          begin="step10.end" dur="0.5s" fill="freeze"
+          begin="step11.begin" fill="freeze"
         />
       </circle>
-      <circle class="step contour" cx="50" cy="0" r="100">
-        <set id="step21"
+      <!-- rotate by 180° to start tracing from the left rather than the right -->
+      <circle class="step contour" cx="50" cy="0" r="100"
+        transform="rotate(180, 50, 0)"
+      >
+        <!--
+          Trace the circle progressively by growing a single dashed stroke
+          from 0 to 2πr = 200π ~ 628.32 < 629
+        -->
+        <animate id="step21"
+          attributeName="stroke-dasharray" attributeType="CSS"
+          from="0 629" to="629 629"
+          begin="step20.end" dur="3s"
+          fill="freeze"
+        />
+        <set
           attributeName="visibility" attributeType="CSS" to="visible"
-          begin="step20.end" dur="0.5s" fill="freeze"
+          begin="step21.begin" fill="freeze"
         />
       </circle>
     </g>
   </defs>
   <g id="lines" class="background">
     <line class="step dashed" x1="-175" x2="175" y1="0" y2="0">
-      <set id="step30"
+      <animate id="step30"
+        attributeName="x2" attributeType="XML"
+        from="-175" to="175"
+        begin="step21.end + 0.5s" dur="3s"
+        fill="freeze"
+      />
+      <set
         attributeName="visibility" attributeType="CSS" to="visible"
-        begin="step21.end" dur="0.5s" fill="freeze"
+        begin="step30.begin" fill="freeze"
       />
     </line>
     <!--
@@ -73,15 +102,54 @@
     with r=100, h~86.602540
     -->
     <line class="step dashed" x1="0" x2="0" y1="-86.6" y2="86.6">
-      <set id="step31"
+      <animate id="step31"
+        attributeName="y2" attributeType="XML"
+        from="-86.6" to="86.6"
+        begin="step30.end + 0.5s" dur="1.5s"
+        fill="freeze"
+      />
+      <set
         attributeName="visibility" attributeType="CSS" to="visible"
-        begin="step30.end" dur="0.5s" fill="freeze"
+        begin="step31.begin" fill="freeze"
       />
     </line>
-    <circle class="step empty dashed" cx="0" cy="0" r="50">
-      <set id="step51"
+    <!-- rotate by -90° to start tracing from the top rather than the right -->
+    <circle class="step empty dashed" cx="0" cy="0" r="50"
+      transform="rotate(-90)"
+    >
+      <!--
+        Trace the dashed circle progressively by adding dashes at each step
+        until the whole perimeter is covered: 2πr = 100π ~ 314.16 < 315
+        with dashes of 10 followed with spaces of 10,
+        this gives 315 / 20 ~ 15.75 < 16 steps
+      -->
+      <animate id="step51"
+        attributeName="stroke-dasharray" attributeType="CSS"
+        values="
+          0 315;
+          10 10 0 295;
+          10 10 10 10 0 275;
+          10 10 10 10 10 10 0 255;
+          10 10 10 10 10 10 10 10 0 235;
+          10 10 10 10 10 10 10 10 10 10 0 215;
+          10 10 10 10 10 10 10 10 10 10 10 10 0 195;
+          10 10 10 10 10 10 10 10 10 10 10 10 10 10 0 175;
+          10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 0 155;
+          10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 0 135;
+          10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 0 115;
+          10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 0 95;
+          10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 0 75;
+          10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 0 55;
+          10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 0 35;
+          10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 0 15;
+          10 10
+        "
+        begin="step50.end + 0.5s" dur="3s"
+        fill="freeze"
+      />
+      <set
         attributeName="visibility" attributeType="CSS" to="visible"
-        begin="step50.end" dur="0.5s" fill="freeze"
+        begin="step51.begin" fill="freeze"
       />
     </circle>
   </g>
@@ -89,47 +157,125 @@
     <use xlink:href="#mandorla" transform="translate(0,0)" />
     <g id="triangle">
       <line class="step line" x1="0" x2="-100" y1="-86.6" y2="86.6">
-        <set id="step41"
+        <animate id="step41"
+          attributeName="x2" attributeType="XML"
+          from="0" to="-100"
+          begin="step40.end + 0.5s" dur="3s"
+          fill="freeze"
+        />
+        <animate
+          attributeName="y2" attributeType="XML"
+          from="-86.6" to="86.6"
+          begin="step41.begin" dur="3s"
+          fill="freeze"
+        />
+        <set
           attributeName="visibility" attributeType="CSS" to="visible"
-          begin="step40.end" dur="0.5s" fill="freeze"
+          begin="step41.begin" fill="freeze"
         />
       </line>
       <line class="step line" x1="-100" x2="100" y1="86.6" y2="86.6">
-        <set id="step43"
+        <animate id="step43"
+          attributeName="x2" attributeType="XML"
+          from="-100" to="100"
+          begin="step42.end + 0.5s" dur="3s"
+          fill="freeze"
+        />
+        <set
           attributeName="visibility" attributeType="CSS" to="visible"
-          begin="step42.end" dur="0.5s" fill="freeze"
+          begin="step43.begin" fill="freeze"
         />
       </line>
       <line class="step line" x1="100" x2="0" y1="86.6" y2="-86.6">
-        <set id="step45"
+        <animate id="step45"
+          attributeName="x2" attributeType="XML"
+          from="100" to="0"
+          begin="step44.end + 0.5s" dur="3s"
+          fill="freeze"
+        />
+        <animate
+          attributeName="y2" attributeType="XML"
+          from="86.6" to="-86.6"
+          begin="step45.begin" dur="3s"
+          fill="freeze"
+        />
+        <set
           attributeName="visibility" attributeType="CSS" to="visible"
-          begin="step44.end" dur="0.5s" fill="freeze"
+          begin="step45.begin" fill="freeze"
         />
       </line>
     </g>
     <g id="square">
       <line class="step line" x1="0" x2="-50" y1="-50" y2="0">
-        <set id="step60"
+        <animate id="step60"
+          attributeName="x2" attributeType="XML"
+          from="0" to="-50"
+          begin="step53.end + 0.5s" dur="1s"
+          fill="freeze"
+        />
+        <animate
+          attributeName="y2" attributeType="XML"
+          from="-50" to="0"
+          begin="step60.begin" dur="1s"
+          fill="freeze"
+        />
+        <set
           attributeName="visibility" attributeType="CSS" to="visible"
-          begin="step53.end" dur="0.5s" fill="freeze"
+          begin="step60.begin" fill="freeze"
         />
       </line>
       <line class="step line" x1="-50" x2="0" y1="0" y2="50">
-        <set id="step61"
+        <animate id="step61"
+          attributeName="x2" attributeType="XML"
+          from="-50" to="0"
+          begin="step60.end + 0.5s" dur="1s"
+          fill="freeze"
+        />
+        <animate
+          attributeName="y2" attributeType="XML"
+          from="0" to="50"
+          begin="step61.begin" dur="1s"
+          fill="freeze"
+        />
+        <set
           attributeName="visibility" attributeType="CSS" to="visible"
-          begin="step60.end" dur="0.5s" fill="freeze"
+          begin="step61.begin" dur="0.5s" fill="freeze"
         />
       </line>
       <line class="step line" x1="0" x2="50" y1="50" y2="0">
-        <set id="step62"
+        <animate id="step62"
+          attributeName="x2" attributeType="XML"
+          from="0" to="50"
+          begin="step61.end + 0.5s" dur="1s"
+          fill="freeze"
+        />
+        <animate
+          attributeName="y2" attributeType="XML"
+          from="50" to="0"
+          begin="step62.begin" dur="1s"
+          fill="freeze"
+        />
+        <set
           attributeName="visibility" attributeType="CSS" to="visible"
-          begin="step61.end" dur="0.5s" fill="freeze"
+          begin="step62.begin" dur="0.5s" fill="freeze"
         />
       </line>
       <line class="step line" x1="50" x2="0" y1="0" y2="-50">
-        <set id="step63"
+        <animate id="step63"
+          attributeName="x2" attributeType="XML"
+          from="50" to="0"
+          begin="step62.end + 0.5s" dur="1s"
+          fill="freeze"
+        />
+        <animate
+          attributeName="y2" attributeType="XML"
+          from="0" to="-50"
+          begin="step63.begin" dur="1s"
+          fill="freeze"
+        />
+        <set
           attributeName="visibility" attributeType="CSS" to="visible"
-          begin="step62.end" dur="0.5s" fill="freeze"
+          begin="step63.begin" dur="0.5s" fill="freeze"
         />
       </line>
     </g>
@@ -144,43 +290,43 @@
     <use class="step" xlink:href="#point" transform="translate(50,0)">
       <set id="step20"
         attributeName="visibility" attributeType="CSS" to="visible"
-        begin="step11.end" dur="0.5s" fill="freeze"
+        begin="step11.end + 0.5s" dur="0.5s" fill="freeze"
       />
     </use>
     <use class="step" xlink:href="#point" transform="translate(0,-86.6)">
       <set id="step40"
         attributeName="visibility" attributeType="CSS" to="visible"
-        begin="step31.end" dur="0.5s" fill="freeze"
+        begin="step31.end + 0.5s" dur="0.5s" fill="freeze"
       />
     </use>
     <use class="step" xlink:href="#point" transform="translate(-100,86.6)">
       <set id="step42"
         attributeName="visibility" attributeType="CSS" to="visible"
-        begin="step41.end" dur="0.5s" fill="freeze"
+        begin="step41.end + 0.5s" dur="0.5s" fill="freeze"
       />
     </use>
     <use class="step" xlink:href="#point" transform="translate(100,86.6)">
       <set id="step44"
         attributeName="visibility" attributeType="CSS" to="visible"
-        begin="step43.end" dur="0.5s" fill="freeze"
+        begin="step43.end + 0.5s" dur="0.5s" fill="freeze"
       />
     </use>
     <use class="step" xlink:href="#point" id="center">
       <set id="step50"
         attributeName="visibility" attributeType="CSS" to="visible"
-        begin="step45.end" dur="0.5s" fill="freeze"
+        begin="step45.end + 0.5s" dur="0.5s" fill="freeze"
       />
     </use>
     <use class="step" xlink:href="#point" transform="translate(0,-50)">
       <set id="step52"
         attributeName="visibility" attributeType="CSS" to="visible"
-        begin="step51.end" dur="0.5s" fill="freeze"
+        begin="step51.end + 0.5s" dur="0.5s" fill="freeze"
       />
     </use>
     <use class="step" xlink:href="#point" transform="translate(0,50)">
       <set id="step53"
         attributeName="visibility" attributeType="CSS" to="visible"
-        begin="step52.end" dur="0.5s" fill="freeze"
+        begin="step52.end + 0.5s" dur="0.5s" fill="freeze"
       />
     </use>
   </g>
