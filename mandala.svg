@@ -16,7 +16,7 @@
     du livre "Mandala, Voyage vers le centre", de Bailey Cunningham
   </desc>
   <style type="text/css">
-    .empty {
+    .empty, path {
       fill: none;
     }
     .dashed {
@@ -30,7 +30,7 @@
     .roundend {
       stroke-linecap: round;
     }
-    line {
+    line, path {
       stroke: black;
       stroke-width: 2.5;
     }
@@ -109,6 +109,7 @@
     <polygon id="diamond-38x22" points="-19,0 0,-11 19,0 0,11" />
   </defs>
   <g id="construction">
+    <circle cx="0" cy="0" r="150" class="empty dashed" />
     <circle cx="0" cy="0" r="300" class="empty dashed" />
     <g id="scaffolding-branch">
       <use xlink:href="#short-line" />
@@ -156,6 +157,16 @@
     </g>
     <g id="hexagon150">
       <use xlink:href="#hex150" />
+    </g>
+    <g id="bridge-like-structure-on-top-of-hexagon150">
+      <line x1="-7.5" x2="-7.5" y1="129.90" y2="140" class="strong" />
+      <line x1="0" x2="0" y1="129.90" y2="150" />
+      <line x1="7.5" x2="7.5" y1="129.90" y2="140" class="strong" />
+      <path d="
+        M-77.5,134.23 C-70,129.90
+        0,129.90 0,150 C0,129.90
+        70,129.90 77.5,134.23"
+      />
     </g>
     <g id="star-175-300">
       <g id="half-star-175-300">
