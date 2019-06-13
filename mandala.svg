@@ -38,6 +38,10 @@
       stroke: none;
       fill: black;
     }
+    #construction {
+      /* hide construction marks */
+      /* visibility: hidden; */
+    }
   </style>
   <defs>
     <circle id="point" r="2.5" />
