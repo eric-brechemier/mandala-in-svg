@@ -184,11 +184,17 @@
       </g>
       <use xlink:href="#half-star-175-300" transform="scale(-1,1)" />
     </g>
-    <g id="extra-startips-225">
-      <g id="extra-startip-225">
-        <use xlink:href="#vline45" transform="translate(0,225) rotate(-135)" />
-        <use xlink:href="#vline45" transform="translate(0,225) rotate(135)" />
+    <g id="extra-startip-225">
+      <g id="black-triangle-decorations-in-extra-startips">
+        <polygon id="larger-triangle"
+          points="-20,195 -2.68,185 -2.68,212.32"
+        />
+        <polygon id="smaller-triangle"
+          points="20,196 6.14,188 6.14,209.86"
+        />
       </g>
+      <use xlink:href="#vline45" transform="translate(0,225) rotate(-135)" />
+      <use xlink:href="#vline45" transform="translate(0,225) rotate(135)" />
     </g>
     <g id="tiplines-of-star-175-300">
       <use xlink:href="#tipline-275-of-star-175-300" transform="rotate(30)" />
