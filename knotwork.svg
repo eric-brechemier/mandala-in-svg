@@ -16,10 +16,16 @@
     Extraite du livre "Mandala, Voyage vers le centre", de Bailey Cunningham.
   </desc>
   <style type="text/css">
-    .grid {
+    .pen, .grid {
       fill: none;
+    }
+    .grid {
       stroke: #7fdfff;
-      stroke-width: 0.02;
+      stroke-width: 0.02; /* 2.5mm */
+    }
+    .pen {
+      stroke: black;
+      stroke-width: 0.04; /* 5mm */
     }
   </style>
   <defs>
@@ -29,5 +35,14 @@
       <rect x="0" y="0" width="1" height="1" class="grid" />
     </pattern>
   </defs>
-  <rect x="-9.5" y="-9.5" width="19" height="19" fill="url(#grid)"/>
+  <rect id="background-grid" fill="url(#grid)"
+    x="-9.5" y="-9.5" width="19" height="19"
+  />
+  <circle id="center" class="pen" x="0" y="0" r="0.02" />
+  <g id="bottom-right">
+    <line x1="0" y1="0" x2="1" y2="1" class="pen" />
+  </g>
+  <use id="bottom-left" xlink:href="#bottom-right" transform="scale(-1,1)" />
+  <use id="top-left" xlink:href="#bottom-right" transform="scale(-1,-1)" />
+  <use id="top-right" xlink:href="#bottom-right" transform="scale(1,-1)" />
 </svg>
