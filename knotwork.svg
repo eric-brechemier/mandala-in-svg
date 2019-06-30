@@ -40,13 +40,21 @@
   />
   <circle id="center" class="pen" x="0" y="0" r="0.02" />
   <g id="bottom-right">
-    <line x1="0" y1="0" x2="1" y2="1" class="pen" />
-    <rect x="2" y="2" width="1" height="1" class="pen" />
-    <rect x="2" y="4" width="1" height="1" class="pen" />
-    <rect x="2" y="6" width="1" height="1" class="pen" />
-    <rect x="4" y="2" width="1" height="1" class="pen" />
-    <rect x="4" y="4" width="1" height="1" class="pen" />
-    <rect x="6" y="2" width="1" height="1" class="pen" />
+    <g id="step1">
+      <line x1="0" y1="0" x2="1" y2="1" class="pen" />
+      <rect x="2" y="2" width="1" height="1" class="pen" />
+      <rect x="2" y="4" width="1" height="1" class="pen" />
+      <rect x="2" y="6" width="1" height="1" class="pen" />
+      <rect x="4" y="2" width="1" height="1" class="pen" />
+      <rect x="4" y="4" width="1" height="1" class="pen" />
+      <rect x="6" y="2" width="1" height="1" class="pen" />
+    </g>
+    <g id="step2">
+      <path
+        d="M1,1v2m0,1v1m0,1v1 M1,1h2m1,0h1m1,0h1 m0,3h-1v2h-2v1"
+        class="pen"
+      />
+    </g>
   </g>
   <use id="bottom-left" xlink:href="#bottom-right" transform="scale(-1,1)" />
   <use id="top-left" xlink:href="#bottom-right" transform="scale(-1,-1)" />
