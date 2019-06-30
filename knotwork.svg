@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="10in"
+  height="10in"
+  viewBox="-10 -10 20 20"
+>
+  <title xml:lang="en">Knotwork</title>
+  <desc xml:lang="en">
+    Construction of knotwork on 1/2 inch grid graph paper.
+    From the book "Mandala, Journey to the Centre", by Bailey Cunningham.
+  </desc>
+  <title xml:lang="fr">Entrelacs</title>
+  <desc xml:lang="fr">
+    Construstion d'un entrelacs sur du papier quadrillé.
+    Extraite du livre "Mandala, Voyage vers le centre", de Bailey Cunningham.
+  </desc>
+  <style type="text/css">
+    .grid {
+      fill: none;
+      stroke: #7fdfff;
+      stroke-width: 0.02;
+    }
+  </style>
+  <defs>
+    <pattern id="grid" patternUnits="userSpaceOnUse"
+      x="0" y="0" width="1" height="1"
+    >
+      <rect x="0" y="0" width="1" height="1" class="grid" />
+    </pattern>
+  </defs>
+  <rect x="-9.5" y="-9.5" width="19" height="19" fill="url(#grid)"/>
+</svg>
