@@ -16,6 +16,10 @@
     Extraite du livre "Mandala, Voyage vers le centre", de Bailey Cunningham.
   </desc>
   <style type="text/css">
+    /* .step0, .step1, .step2, .step3 */
+    .step4 {
+      visibility: hidden;
+    }
     .pen, .grid {
       fill: none;
     }
@@ -27,6 +31,9 @@
       stroke: black;
       stroke-width: 0.04; /* 5mm */
     }
+    .strong {
+      stroke-width: 0.056; /* 7mm */
+    }
   </style>
   <defs>
     <pattern id="grid" patternUnits="userSpaceOnUse"
@@ -34,29 +41,47 @@
     >
       <rect x="0" y="0" width="1" height="1" class="grid" />
     </pattern>
+    <g id="quarter">
+      <g class="step1">
+        <line x1="0" y1="0" x2="1" y2="1" class="pen" />
+        <rect x="2" y="2" width="1" height="1" class="pen" />
+        <rect x="2" y="4" width="1" height="1" class="pen" />
+        <rect x="2" y="6" width="1" height="1" class="pen" />
+        <rect x="4" y="2" width="1" height="1" class="pen" />
+        <rect x="4" y="4" width="1" height="1" class="pen" />
+        <rect x="6" y="2" width="1" height="1" class="pen" />
+      </g>
+      <g class="step2">
+        <path
+          d="M1,1v2m0,1v1m0,1v1 M1,1h2m1,0h1m1,0h1 m0,3h-1v2h-2v1"
+          class="pen"
+        />
+      </g>
+    </g>
   </defs>
   <rect id="background-grid" fill="url(#grid)"
     x="-9.5" y="-9.5" width="19" height="19"
   />
-  <circle id="center" class="pen" x="0" y="0" r="0.02" />
-  <g id="bottom-right">
-    <g id="step1">
-      <line x1="0" y1="0" x2="1" y2="1" class="pen" />
-      <rect x="2" y="2" width="1" height="1" class="pen" />
-      <rect x="2" y="4" width="1" height="1" class="pen" />
-      <rect x="2" y="6" width="1" height="1" class="pen" />
-      <rect x="4" y="2" width="1" height="1" class="pen" />
-      <rect x="4" y="4" width="1" height="1" class="pen" />
-      <rect x="6" y="2" width="1" height="1" class="pen" />
-    </g>
-    <g id="step2">
-      <path
-        d="M1,1v2m0,1v1m0,1v1 M1,1h2m1,0h1m1,0h1 m0,3h-1v2h-2v1"
-        class="pen"
+  <circle id="center" class="step0 pen" x="0" y="0" r="0.02" />
+  <use id="bottom-right" xlink:href="#quarter" />
+  <use id="bottom-left" xlink:href="#quarter" transform="scale(-1,1)" />
+  <use id="top-left" xlink:href="#quarter" transform="scale(-1,-1)" />
+  <use id="top-right" xlink:href="#quarter" transform="scale(1,-1)" />
+  <g id="rings">
+    <g id="half-rings">
+      <path id="half-inner-ring"
+        d="M3,5v1m1,-1v1
+           M5,1h1m-1,1h1
+           M5,-3h1m-1,-1h1
+           M1,-6v1m1,-1v1"
+        class="pen step3"
+      />
+      <path id="half-outer-ring"
+        d="M0,7l1,-1h2m1,0h2v-4m0,-1l1,-1l-1,-1v-2m0,-1v-2h-4m-1,0l-1,-1
+           M0,6l1,-1h2m1,0h1v-3m0,-1l1,-1l-1,-1v-2m0,-1v-1h-3m-1,0l-1,-1"
+        class="strong pen step3"
       />
     </g>
+    <use xlink:href="#half-rings" transform="scale(-1,-1)" class="step3" />
   </g>
-  <use id="bottom-left" xlink:href="#bottom-right" transform="scale(-1,1)" />
-  <use id="top-left" xlink:href="#bottom-right" transform="scale(-1,-1)" />
-  <use id="top-right" xlink:href="#bottom-right" transform="scale(1,-1)" />
 </svg>
